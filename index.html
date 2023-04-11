@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>JavaScript Lab</title>
-</head>
-<body>
-  hello
-  <script type="text/javascript" src="index.js"></script>
-</body>
+<html>
+  <head>
+    <title>Superbowl Wins</title>
+  </head>
+  <body>
+    <h1>Superbowl Wins</h1>
+    <p>The Denver Broncos have won the Superbowl in the following years:</p>
+    <ul id="wins"></ul>
+    <script src="index.js"></script>
+    <script>
+      const record = [
+        { year: "2015", result: "W"},
+        { year: "2014", result: "N/A"},
+        { year: "2013", result: "L"},
+        //...
+      ];
+      const winYear = superbowlWin(record);
+      if (winYear) {
+        const winsList = document.querySelector("#wins");
+        const winItem = document.createElement("li");
+        winItem.textContent = winYear;
+        winsList.appendChild(winItem);
+      }
+    </script>
+  </body>
 </html>
